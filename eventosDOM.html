@@ -9,6 +9,12 @@
     <h1 onclick="funcionDom()"> Hola mundo denuevo :D </h1>
     <!-- le asignamos el evento onclick a la etiqueta superior P a la cual le pasamos como valor la funcion: cambiarContenidoHTML, con el parametro "this" que hace referencia al elemento HTML al que se le dio click, en este caso el parrafo, para que la funcion pueda acceder a ese elemento y modificar su contenido--> 
     <p onclick="cambiarContenidoHTML(this)"> Adio mundo :P</p>
+
+    <br>
+    <form id="formu">
+        Hola: <input type="text" id="saludo">
+    </form>   
+</body>
     <script>
         const funcionDom = () => { //definimos una funcion DOM por medio de un script que va encargar de modificar el documento html
             console.log('hola'); //aca estamos diciendole que imprima hola en consola
@@ -18,7 +24,17 @@
         function cambiarContenidoHTML(texto){
             texto.innerHTML = "Broma :P"; //aca estamos diciendole que cambie el contenido del elemento HTML al que se le dio click, en este caso el parrafo, por "Broma :P"
         }
-        console.log('finalizo evento simple');        
+        console.log('finalizo evento simple');
+        
+        //aca estamos seleccionando el elemento HTML con el id "formu" y lo asignamos a la variable formu para poder acceder a sus propiedades y metodos 
+        formu.addEventListener('focus', (dentro) =>{
+            let componenteInterno = dentro.target; //dentro.target hace referencia al elemento HTML al que se le dio click, en este caso el input, y lo asignamos a la variable componenteInterno para poder acceder a sus propiedades y metodos
+            componenteInterno.style.backgroundColor = 'red'; //aca estamos diciendole que cambie el color de fondo del elemento HTML al que se le dio click, en este caso el input, por rojo
+        },true // el tercer parametro "true" es para que el evento se ejecute en la fase de captura, es decir, antes de que el evento llegue al elemento HTML al que se le dio click, en este caso el input
+    )
+        formu.addEventListener('blur', (dentro) =>{
+            let componenteInterno = dentro.target; //dentro.target hace referencia al elemento HTML al que se le dio click, en este caso el input, y lo asignamos a la variable componenteInterno para poder acceder a sus propiedades y metodos
+            componenteInterno.style.backgroundColor = ''; //aca estamos diciendole que cambie el color de fondo del elemento HTML al que se le dio click, en este caso el input, por rojo
+        },true)
     </script>
-</body>
 </html>
