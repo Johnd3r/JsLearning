@@ -6,6 +6,10 @@ function funcionNormal (){
 }
 
 //Creacion de funcion flecha simple
+//Const es la forma de decir function en una funcion normal
+                   //El signo igual "=" es para asignar el valor de la funcion a la variable "funcionflecha
+                      //los parentesis "()" es para indicar que es una funcion, y dentro de ellos se pueden pasar parametros si se necesitan, en este caso no se necesitan parametros, por eso estan vacios
+                         //la flecha "=>" es para indicar que es una funcion flecha, y despues de la flecha va el cuerpo de la funcion, que en este caso es un console.log que imprime "hola"
 const funcionflecha = () => console.log("hola");
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

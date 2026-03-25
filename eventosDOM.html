@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendiendo DOM con JS</title>
+</head>
+<body><!-- le asignamos el evento onclick a la etiqueta superior H1 a la cual le pasamos como valor la funcion: funcionDom, sin parametros ya que simplemente va ejecutar lo que esta en ella, que es un "hola" en consola-->
+    <h1 onclick="funcionDom()"> Hola mundo denuevo :D </h1>
+    <!-- le asignamos el evento onclick a la etiqueta superior P a la cual le pasamos como valor la funcion: cambiarContenidoHTML, con el parametro "this" que hace referencia al elemento HTML al que se le dio click, en este caso el parrafo, para que la funcion pueda acceder a ese elemento y modificar su contenido--> 
+    <p onclick="cambiarContenidoHTML(this)"> Adio mundo :P</p>
+    <script>
+        const funcionDom = () => { //definimos una funcion DOM por medio de un script que va encargar de modificar el documento html
+            console.log('hola'); //aca estamos diciendole que imprima hola en consola
+        }
+        //la funcion cambiarContenidoHTML es una funcion que va a cambiar el contenido del elemento HTML al que se le dio click, en este caso el parrafo, por "Broma :P"    
+                                //aca texto es el parametro que recibe la funcion, y ese parametro es el elemento HTML al que se le dio click, en este caso el parrafo, por eso le pasamos "this" como valor del evento onclick, para que la funcion pueda acceder al elemento HTML al que se le dio click y modificar su contenido
+        function cambiarContenidoHTML(texto){
+            texto.innerHTML = "Broma :P"; //aca estamos diciendole que cambie el contenido del elemento HTML al que se le dio click, en este caso el parrafo, por "Broma :P"
+        }
+        console.log('finalizo evento simple');        
+    </script>
+</body>
+</html>
