@@ -8,13 +8,23 @@
     <title>Listado de personas</title>
 </head>
 <!--Se agrega el evento DOM 'onload' que se encarga de ejecutar la funcion mostrarList al cargar la pagina (Aun no se si sea buena practica)-->
-<body onload=mostrarList()>
+<body onload="mostrarList()">
     <h1 id="cabecero" class="contenedor">Lista de personas</h1>
     <div class="contenedor">
         <div class="elemento">
-            <li id="hola"></li>
+            <li id="personaLista"></li>
         </div>
     </div>
+
+    <div class="contenedor">
+        <div style="text-align: center;">
+        <button onclick="agregarPersona()">+</button>
+    </div>
+    <form id="formu">
+        <input id="nombreF" type="text" placeholder="Ingresa Nombre"> 
+        <input id="apellidoF" type="text" placeholder="Ingresa Apellido"> 
+    </form>
+    
     <!--Se agrega el enlace al scrip de js abajo antes del body-->
     <script src="persona.js"></script>
     <script src="app.js"></script>
