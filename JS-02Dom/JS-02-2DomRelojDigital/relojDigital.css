@@ -1,0 +1,21 @@
+#reloj {
+    font-family: 'Poppins', sans-serif;
+    font-size: 60px;
+    color: white;
+    text-shadow: 0px 0px 3px #291c07;
+}
+
+.reloj-contenedor{
+    background-color: #d79315;
+    text-align: center;
+    letter-spacing: 7px;
+    border-radius: 13px;
+    max-width: 950px; /*Se le indica que una distancia o anchura maxima al contenedor para que no pase de ahí*/
+    margin: 10% auto; /*Aqui basicamente lo que se hace es decirle que arriba y abajo haya 10% de margen de distancia y la distancia entre derecha e izquierda sea automatica, para que se centre en la pantalla*/ 
+    padding: 10px;
+}
+
+#fecha{
+    letter-spacing: 10px;
+    font-size: 45%;
+}
