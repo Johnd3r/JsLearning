@@ -1,4 +1,4 @@
-* {
+* { 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,10 +9,10 @@
     display: table;
     clear: both;
 }
-
+/*Valores por defecto que tendra lo que se invoque en el cuerpo del documento*/
 body {
     color: #555;
-    font-family: Open Sans;
+    font-family: 'Poppins', sans-serif;
     font-size: 16px;
     position: relative;
     height: 100vh;
@@ -23,6 +23,7 @@ body {
 .rojo { color: #FF5049 !important; }
 .rojofocus:focus { border: 1px solid #FF5049 !important; }
 
+/*Esto de aca es basicamente la primera secion de la app donde esta el presupuesto. (fondo)*/
 .cabecero {
     height: 40vh;
     background-size: cover;
@@ -92,7 +93,7 @@ body {
 
 .presupuesto_ingreso--porcentaje,
 .presupuesto_egreso--porcentaje {
-    float: left;
+    float: right;
     width: 34px;
     font-size: 11px;
     padding: 3px 0;
