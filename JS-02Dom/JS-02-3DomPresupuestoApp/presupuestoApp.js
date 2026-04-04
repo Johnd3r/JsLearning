@@ -29,6 +29,7 @@ const cargarCabecero = () => {
 const calcularDineroDisponible = () => {
     //se resta el total de ingresos con el total de egresos para sacar el dinero disponible
     let totalDisp = calcularIngresosTotal() - calcularEgresosTotal();
+    totalDisp = `$`+totalDisp;
     return totalDisp;
 }
 
