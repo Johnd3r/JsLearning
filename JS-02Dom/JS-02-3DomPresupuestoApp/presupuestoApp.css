@@ -100,8 +100,14 @@ body {
     margin-left: 10px;
 }
 
+.presupuesto_ingreso--porcentaje {
+    background-color: rgba(255, 255, 255, 0.282);
+    text-align: center;
+    border-radius: 3px;
+}
+
 .presupuesto_egreso--porcentaje {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(62, 46, 46, 0.2);
     text-align: center;
     border-radius: 3px;
 }
