@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="presupuestoApp.css">
     <title>Presupuesto WAPP</title>
 </head>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <body onload="cargarApp()">
     <div class="cabecero">
         <div class="presupuesto">
@@ -28,7 +30,41 @@
                     </div>
                 </div>   
             </div>               
-        </div>        
+        </div> 
+        <div class="contenedor limpiarEstilos">
+            <div class="ingreso">
+                <h2 class="ingreso_titulo">INGRESOS</h2>
+                <div id="lista-ingresos">
+<!--                     <div class="elemento limpiarEstilos">
+                        <div class="elemento_descripcion">Salario</div>
+                        <div class="derecha limpiarEstilos">
+                        <div class="elemento_valor">1000.00</div>
+                        <div class="elemento_eliminar">
+                            <button class="elemento_eliminar--btn">
+                                <ion-icon name='close-outline'></ion-icon>
+                            </button>
+                        </div>
+                        </div>          
+                    </div> -->
+                </div>
+            </div>
+                <div class="egreso">
+                    <h2 class="egreso_titulo">EGRESOS</h2>
+                    <div id="lista-egresos">
+<!--                         <div class="elemento limpiarEstilos">
+                            <div class="elemento_descripcion">Deuda</div>
+                            <div class="derecha limpiarEstilos">
+                            <div class="elemento_valor">70.00</div>
+                            <div class="elemento_porcentaje">160%</div>
+                            <div class="elemento_eliminar">
+                                <button class="elemento_eliminar--btn">
+                                    <ion-icon name='close-outline'></ion-icon>
+                                </button>
+                            </div>
+                            </div>
+                        </div> -->
+                    </div>
+            </div>
     </div>
     <script src="Dato.js"></script>
     <script src="Ingreso.js"></script>
