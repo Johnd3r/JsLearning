@@ -11,6 +11,8 @@ const egresos = [
 //funcion que se encarga de generar toda la App (Medio inecesario pensaria la verdad)
 const cargarApp = () => {
     cargarCabecero();
+    cargarIngreso();
+    cargarEgreso();
 }
 //Esta funcion se encarga de extraer los DOM del html a convenir, y luego se les inyecta los nuevos valores al documento por medio del manejo de DOM
 const cargarCabecero = () => {
@@ -59,4 +61,58 @@ const calcularPorcentajeEgreso = () =>{
 const calcularPorcentajeIngreso = () =>{
     let porcentajeIngreso = calcularDineroDisponible()/calcularIngresosTotal()*100;
     return porcentajeIngreso;
+}
+
+const cargarIngreso = () => {
+    let obtenerIngreso = '';
+    for (let ingreso of ingresos){
+        obtenerIngreso += crearIngreso(ingreso);
+        document.getElementById('lista-ingresos').innerHTML = obtenerIngreso;
+    }
+}
+
+const crearIngreso = (ingreso) => {
+    let obtenerIngreso = `
+        <div id="lista-ingresos">
+                    <div class="elemento limpiarEstilos">
+                        <div class="elemento_descripcion">${ingreso.tipo}</div>
+                        <div class="derecha limpiarEstilos">
+                        <div class="elemento_valor">$${ingreso.valor.toFixed(2)}</div>
+                        <div class="elemento_eliminar">
+                            <button class="elemento_eliminar--btn">
+                                <ion-icon name='close-outline'></ion-icon>
+                            </button>
+                        </div>
+                        </div>          
+                    </div>
+                </div>            
+    `
+    return obtenerIngreso;
+}
+const cargarEgreso= () => {
+    let obtenerEgreso = '';
+    for (let egreso of egresos){
+        obtenerEgreso += crearEgreso(egreso);
+        document.getElementById('lista-egresos').innerHTML = obtenerEgreso;
+    }
+}
+
+const crearEgreso = (egreso) => {
+    let obtenerEgreso = `
+        <div id="lista-egresos">
+                        <div class="elemento limpiarEstilos">
+                            <div class="elemento_descripcion">${egreso.tipo}</div>
+                            <div class="derecha limpiarEstilos">
+                            <div class="elemento_valor">$${egreso.valor.toFixed(2)}</div>
+                            <div class="elemento_porcentaje">%${(egreso.valor/calcularEgresosTotal()*100).toFixed(2)}</div>
+                            <div class="elemento_eliminar">
+                                <button class="elemento_eliminar--btn">
+                                    <ion-icon name='close-outline'></ion-icon>
+                                </button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>            
+    `
+    return obtenerEgreso;
 }
