@@ -1,7 +1,8 @@
 
 const ingresos = [
     new Ingreso('Pasajes', 560),
-    new Ingreso('Comida', 20)
+    new Ingreso('Comida', 20),
+    new Ingreso('C', 1)
 ]
 
 const egresos = [
@@ -67,25 +68,23 @@ const cargarIngreso = () => {
     let obtenerIngreso = '';
     for (let ingreso of ingresos){
         obtenerIngreso += crearIngreso(ingreso);
-        document.getElementById('lista-ingresos').innerHTML = obtenerIngreso;
     }
+    document.getElementById('lista-ingresos').innerHTML = obtenerIngreso;
 }
 
 const crearIngreso = (ingreso) => {
     let obtenerIngreso = `
-        <div id="lista-ingresos">
                     <div class="elemento limpiarEstilos">
                         <div class="elemento_descripcion">${ingreso.tipo}</div>
                         <div class="derecha limpiarEstilos">
                         <div class="elemento_valor">$${ingreso.valor.toFixed(2)}</div>
                         <div class="elemento_eliminar">
                             <button class="elemento_eliminar--btn">
-                                <ion-icon name='close-outline'></ion-icon>
+                                <ion-icon name='close-outline' onclick ='eliminarIngreso(${ingreso.id})'></ion-icon>
                             </button>
                         </div>
                         </div>          
-                    </div>
-                </div>            
+                    </div>         
     `
     return obtenerIngreso;
 }
@@ -93,13 +92,12 @@ const cargarEgreso= () => {
     let obtenerEgreso = '';
     for (let egreso of egresos){
         obtenerEgreso += crearEgreso(egreso);
-        document.getElementById('lista-egresos').innerHTML = obtenerEgreso;
     }
+    document.getElementById('lista-egresos').innerHTML = obtenerEgreso;
 }
 
 const crearEgreso = (egreso) => {
     let obtenerEgreso = `
-        <div id="lista-egresos">
                         <div class="elemento limpiarEstilos">
                             <div class="elemento_descripcion">${egreso.tipo}</div>
                             <div class="derecha limpiarEstilos">
@@ -107,12 +105,27 @@ const crearEgreso = (egreso) => {
                             <div class="elemento_porcentaje">%${(egreso.valor/calcularEgresosTotal()*100).toFixed(2)}</div>
                             <div class="elemento_eliminar">
                                 <button class="elemento_eliminar--btn">
-                                    <ion-icon name='close-outline'></ion-icon>
+                                    <ion-icon name='close-outline' onclick ='eliminarEgreso(${egreso.id})' ></ion-icon>
                                 </button>
                             </div>
                             </div>
-                        </div>
-                    </div>            
+                        </div>    
     `
     return obtenerEgreso;
+}
+
+const eliminarIngreso = (id) => {
+    let obtenerElem = ingresos.findIndex(ingreso => ingreso.id === id);
+    ingresos.splice(obtenerElem, 1);
+    cargarCabecero();
+    cargarIngreso();
+}
+
+const eliminarEgreso = (id) => {
+    let obtenerElem = egresos.findIndex(egreso => egreso.id === id);
+    console.log(obtenerElem);
+    egresos.splice(obtenerElem, 1);
+    console.log(obtenerElem);
+    cargarCabecero();
+    cargarEgreso();
 }
