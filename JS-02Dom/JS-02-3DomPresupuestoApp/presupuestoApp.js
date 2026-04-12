@@ -113,10 +113,11 @@ const crearEgreso = (egreso) => {
     `
     return obtenerEgreso;
 }
-
-const eliminarIngreso = (id) => {
-    let obtenerElem = ingresos.findIndex(ingreso => ingreso.id === id);
-    ingresos.splice(obtenerElem, 1);
+//Esta es la funcion rompeBolas que me cuesta aun entender un poco, es para hacer la funcionalidad de eliminar del boton
+const eliminarIngreso = (id) => { //aca le pedimos que para que esta funcione se necesite el parametro de id del elemento
+    let obtenerElem = ingresos.findIndex(ingreso => ingreso.id === id); //ingresamos  a lista de obj ingresos con el metodo findIndex)(Metodo que sirve para obtener la posicion de un item en una lista), hacemos una funcion call back que se encargara de recorrer cada objeto de la lista y comparar sus ids con el parametro pasado, si cumple, se finaliza y asigna a la variable llamada 'obtenerElem'
+    ingresos.splice(obtenerElem, 1); //Aca accedemos denuevo a la lista de ingresos con el metodo 'splice' (Se encarga de eliminar un item de una lista o remplazarlo por otro), obtenemos el id que va ser la posicion por medio de la variable ya designada antes, y le decimos que borre solo 1 item, el actual, y listo!
+    //recargamos y listo!
     cargarCabecero();
     cargarIngreso();
 }
