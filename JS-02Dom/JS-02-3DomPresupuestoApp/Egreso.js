@@ -6,7 +6,7 @@ class Egreso extends Dato {
         this._id = ++Ingreso.registroEgreso;
     }
 
-    get registroEgreso(){
+    get id(){
         return this._id;
     }
 }

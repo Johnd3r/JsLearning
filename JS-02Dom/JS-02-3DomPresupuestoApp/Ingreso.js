@@ -6,7 +6,7 @@ class Ingreso extends Dato {
         this._id = ++Ingreso.registroIngreso;
     }
 
-    get registroIngreso(){
+    get id(){
         return this._id;
     }
 }
