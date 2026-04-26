@@ -88,6 +88,7 @@ const crearIngreso = (ingreso) => {
     `
     return obtenerIngreso;
 }
+
 const cargarEgreso= () => {
     let obtenerEgreso = '';
     for (let egreso of egresos){
@@ -129,4 +130,26 @@ const eliminarEgreso = (id) => {
     console.log(obtenerElem);
     cargarCabecero();
     cargarEgreso();
+}
+
+const obtenerForm = () => {
+
+    let descripcion = document.getElementById('descripcionEl').value;
+    let valor = parseFloat(document.getElementById('valorEl').value);
+    let oper = document.getElementById('opOp').value;
+
+    if (oper === "opIngreso") {
+        let elIngreso = new Ingreso (descripcion, valor);
+        ingresos.push(elIngreso);
+        crearIngreso(elIngreso);
+        cargarIngreso();
+
+    } else {
+        let elEgreso = new Egreso (descripcion, valor);
+        egresos.push(elEgreso);
+        crearEgreso(elEgreso);        
+        cargarEgreso();
+    }
+    
+    cargarCabecero();
 }

@@ -33,13 +33,13 @@
         </div> 
         <div class="agregar limpiarEstilos">
             <form class="agregar_contenedor">
-                <select name="tipo" class="agregar_tipo">
-                    <option value="suma">+</option>
-                    <option value="resta">-</option>            
+                <select name="tipo" id="opOp" class="agregar_tipo">
+                    <option value="opIngreso">+</option>
+                    <option value="opEgreso">-</option>            
                 </select>   
                 <input class="agregar_descripcion" id="descripcionEl" placeholder="Descripcion">
-                <input class="agregar_descripcion" id="descripcionEl" placeholder="Ingresa el valor">
-                <button class="agregar_btn">
+                <input class="agregar_descripcion" id="valorEl" type="number" placeholder="Ingresa el valor">
+                <button id="obtenerBtn" type="button" class="agregar_btn" onclick='obtenerForm()'>
                     <ion-icon name="checkmark-circle-outline"></ion-icon>
                 </button>
             </form>
