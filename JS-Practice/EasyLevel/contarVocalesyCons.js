@@ -18,9 +18,22 @@ let palabraL = palabra.split(""); //lo esperado seria que guardara algo como ["n
             contarConsonantes[letraIterada] = (contarConsonantes[letraIterada] || 0) +1;
 /*             console.log(`La letra ${letraIterada} no es una vocal.`); */
         }
+
     });
-    console.log("Las vocales son:", contarVocales);
-    console.log("Las vocales son:", contarConsonantes);
+    return {contarConsonantes, contarVocales};
 }
 
-vocalesString("niño", vocales);
+const totContarVocales = (contarVocales) => { 
+    return Object.values(contarVocales).reduce((acc, cur) => acc + cur, 0);
+};
+const totContarConsonantes = (contarConsonantes) => { 
+    return Object.values(contarConsonantes).reduce((acc, cur) => acc + cur, 0);
+};
+
+
+const resultado = vocalesString("niños", vocales);
+
+console.log("Total de vocales en la palabra:", totContarVocales(resultado.contarVocales));
+console.log("Total de vocales en la palabra:", totContarConsonantes(resultado.contarConsonantes));
+console.log("Las vocales son:", resultado.contarVocales);
+console.log("Las consonantes son:", resultado.contarConsonantes);
