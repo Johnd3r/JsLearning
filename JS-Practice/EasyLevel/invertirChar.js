@@ -1,6 +1,7 @@
 
 const validarPalindroma = (palabra) => {
 
+const palabraNormal = palabra.toLowerCase();
 let palabraAlRevez = palabra.split("").reverse().join(""); // usamos el metodo de arraydear la palabra pasada como parametro con 'split', luego la reverseamos con el metodo reverse --> esrever, despues concatenamos todo con el metodo join y le pasamos como parametro "," para eliminar los , que hay entre las palabras y formar un solo string
 
 if (palabraAlRevez === palabra){  //validamos si la palabra es tal cual del mismo tipo y valor y asi confirmar si es palindroma
